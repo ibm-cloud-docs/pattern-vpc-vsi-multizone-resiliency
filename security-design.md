@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -21,4 +21,4 @@ The web app multi-zone resiliency pattern leverages IBM Cloud Data Protection Se
 
 - Key Protect is used to support data encryption with customer provided keys to meet regulatory compliance requirements. Key Protect uses a shared FIPS 140-2 level 3 certified hardware security module (HSM) to store keys used by storage services for envelope encryption and is also used to offload TLS/SSL keys.
 
-    - Note that you could also use Hyper Protect Crypto Services (HPCS) as the Key Management Service. HPCS uses a dedicated HSM FIPS 140-2 Level 4 certified (highest level) and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. HPCS is recommended for financial services and other highly regulated industry applications.
+    Note that you could also use Hyper Protect Crypto Services (HPCS) as the Key Management Service. HPCS uses a dedicated HSM FIPS 140-2 Level 4 certified (highest level) and supports customer-managed master keys, giving the customer exclusive control of the entire key hierarchy. HPCS is recommended for financial services and other highly regulated industry applications.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 subcollection: pattern-vpc-vsi-multi-zone-resiliency
 
@@ -16,7 +16,7 @@ keywords:
 ## High availability Design
 {: #high-availability-design}
 
-The web app multi-zone resiliency pattern deploys a 3-tier web architecture in two regions following the multi-zone, multi-region deployment described in [Virtual Private Cloud Resiliency Whitepaper](/docs/vpc-resiliency?topic=vpc-resiliency-high-availability-design).
+The web app multi-zone resiliency pattern deploys a 3-tier web architecture in a region following the multi-zone, single-region deployment described in [Virtual Private Cloud Resiliency Whitepaper](/docs/vpc-resiliency?topic=vpc-resiliency-high-availability-design).
 
 The web tier and application tier are deployed in two availability zones. Each tier is deployed across VPC Virtual Server Instances (VSIs) in a VPC Instance Group for Autoscaling. A public VPC Application Load Balancer (ALB) routes web requests to healthy virtual instances in the app tier. A private VPC ALB routes traffic to healthy virtual servers in the app tier.
 
@@ -30,7 +30,7 @@ High availability at the database tier is typically achieved with an active-stan
 
 - a mechanism to failover from the primary database to the standby replica and back
 
-In the web app multi-zone resiliency pattern, the database tier is deployed on Virtual Server Instances across two availability zones in the same region following an active-standby architecture using database specific replication and failover configuration settings.
+In the web app multi-zone resiliency pattern, the database tier is deployed on Virtual Server Instances across two availability zones in the same region, following an active-standby architecture using database specific replication and failover configuration settings.
 
 Note that this database deployment architecture is subject to the 99.9% IBM Cloud infrastructure [SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document) for a region. For 99.99% infrastructure SLA within the region, the database must be deployed on virtual servers across three availability zones within the region and use clustering and replication configurations which will be database specific and are beyond the scope of this document.
 

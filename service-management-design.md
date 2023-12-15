@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -24,7 +24,7 @@ Use IBM Cloud Monitoring to get a comprehensive view of the health of the Web Ap
 
 - Install and configure monitoring agents on each of the VPC Virtual Servers used to deploy the web, app, and database tiers. The monitoring agent collects the following metrics by default: system host, file, file system, process, and network metrics. See [Monitoring Infrastructure](https://cloud.ibm.com/docs/monitoring?topic=monitoring-getting-started#getting-started-step3-2) for details. IBM Cloud Monitoring also supports monitoring of application platform metrics through Prometheus exporters or custom metrics. See [Monitoring Features](https://cloud.ibm.com/docs/monitoring?topic=monitoring-features) for more details.
 
-    -   Consider using [IBM Instana](https://www.ibm.com/docs/en/instana-observability/current?topic=overview) to get additional application performance metrics and automate application performance management for the Web, App, and Database tiers. IBM Instana provides data and actionable insights to monitor the applications and automate root-cause analysis.
+- Use [IBM Instana](https://www.ibm.com/docs/en/instana-observability/current?topic=overview) to get additional application performance metrics and automate application performance management for the Web, App, and Database tiers. IBM Instana provides data and actionable insights to monitor the applications and automate root-cause analysis.
 
 - Use the Monitoring dashboard to view, aggregate, and analyze performance metrics.
 
@@ -49,7 +49,7 @@ Use IBM Log Analysis to monitor operational logs for applications, platform reso
 
 - Define alerts for the conditions that you need to monitor and integrate with IBM Cloud Monitoring to send notifications and manage log alerts along with metrics alerts. See [Integrating with IBM Cloud Monitoring](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-monitoring) for details.
 
-- Configure streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-streaming) for details.
+    - Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-streaming) for details.
 
 - Copy logs to IBM Cloud Object Storage to support \>30 days data search or data retention policy requirements. See [Configuring Archiving Logs to COS](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-archiving-ov) for details.
 
@@ -66,7 +66,7 @@ Use [IBM Cloud Activity Tracker](https://cloud.ibm.com/docs/activity-tracker?top
 
 - Create alerts to get notifications when configuration changes are made to the IBM Cloud account and integrate with IBM Cloud Monitoring to send notifications and manage audit log alerts along with metrics alerts. See [Integrating with IBM Cloud Monitoring](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-monitoring) for details.
 
-- Configure streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-streaming) for details.
+    - Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-streaming) for details.
 
 - Copy audit logs to IBM Cloud Object Storage to support \>30 days data search or data retention policy requirements. See [Configuring Archiving Logs to COS](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving-ov) for details.
 
