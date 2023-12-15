@@ -32,7 +32,7 @@ In the web app multi-zone resiliency pattern, the database tier is deployed on V
 
 This database deployment architecture is subject to the 99.9% IBM Cloud infrastructure [SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external} for a region. For 99.99% infrastructure SLA within the region, the database must be deployed on virtual servers across three availability zones within the region and use clustering and replication configurations that are database-specific and are beyond the scope of this document.
 
-    An alternative to deploying the database in VPC Virtual Server Instances is to use [IBM Cloud Databases](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-about) instances in a multi-zone region (MZR). IBM Cloud Databases provides highly available and scalable managed SQL and no-SQL databases with 99.99% SLA and low operational cost.
+An alternative to deploying the database in VPC Virtual Server Instances is to use [IBM Cloud Databases](/docs/cloud-databases?topic=cloud-databases-about) instances in a multi-zone region (MZR). IBM Cloud Databases provides highly available and scalable managed SQL and no-SQL databases with 99.99% SLA and low operational cost.
 
 ## Backup and restore design
 {: #backup-design}

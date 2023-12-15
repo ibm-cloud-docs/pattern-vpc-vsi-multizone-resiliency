@@ -26,6 +26,6 @@ The web app multi-zone resiliency pattern is intended to:
 
 - Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the [IBM Architecture Framework](/docs/architecture-framework).
 
-- Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection to meet enterprise requirements.
+- Provide a prescriptive, end-to-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection to meet enterprise requirements.
 
 - Ensure that requirements can be met from a performance, system availability, and security perspective.

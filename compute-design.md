@@ -19,7 +19,7 @@ The Virtual Servers for the web tier, application tier, and database tier are pr
 
 - VPC Virtual Server Profile: select compute and memory profiles for each tier, based on tier capacity and performance requirements.
 
-- Placement Groups: create [Placement Groups](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui) for virtual servers to avoid single point of failures. Select “[power spread](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui#power-spread-placement-groups-for-vpc)” to provision virtual servers in the Placement Group across different hosts to protect against host failures and on separate power and network domains to protect against power and network failures.
+- Placement Groups: create [Placement Groups](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui) for virtual servers to avoid single point of failures. Select [power spread](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui#power-spread-placement-groups-for-vpc) to provision virtual servers in the Placement Group across different hosts to protect against host failures and on separate power and network domains to protect against power and network failures.
 
 - VPC Autoscale: create [Instance Groups](/docs/vpc?topic=vpc-creating-auto-scale-instance-group&interface=ui) for autoscaling virtual servers in the web and app tiers to adjust compute resources to handle dynamic changes in load conditions.
     -   Add the instance group to the Placement Group.
