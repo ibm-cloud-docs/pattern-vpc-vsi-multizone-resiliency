@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -24,7 +24,7 @@ The following are security architecture decisions for the web app multi-zone res
 | Data Encryption at rest of Application | Encrypt all application data to protect from unauthorized disclosure | - Storage encryption with customer-managed keys \n - App-level encryption with customer-managed keys | Storage Encryption with customer-managed keys | Application data can be stored on VPC File, VPC Block, or Cloud Object Storage (COS) which support encryption with customer-managed keys by selecting a Key Management Service (KMS) for the respective storage service. |
 | Data Encryption at rest of Backups | Encrypt all backup data to protect from unauthorized disclosure | Storage encryption with customer-managed keys App-level encryption | Storage encryption with customer-managed keys | Backup data can be stored in COS or VPC Block storage which support encryption with customer-managed keys by selecting a KMS. |
 | Data Encryption at rest of Logs | Encrypt all operational and audit logs at rest to protect from unauthorized disclosure | Storage encryption with customer-managed keys App-level encryption | Storage encryption with customer-managed keys | All operational and audit logs are stored in COS which supports encryption with customer-managed keys by selecting a KMS. |
-| Data encryption in transit of Web and App Tiers | Encrypt all application data in transit to protect from unauthorized disclosure | Application-level encryption with TLS | Application-level encryption with TLS | Web app uses HTTPS protocol to encrypt data transmissions. |
+| Data encryption in transit of Web App | Encrypt all application data in transit to protect from unauthorized disclosure | Application-level encryption with TLS | Application-level encryption with TLS | Web app uses HTTPS protocol to encrypt data transmissions. |
 | Data encryption in transit of DB Tier | Encrypt all application data in transit to protect from unauthorized disclosure | Application-level encryption with TLS | Application-level encryption with TLS | The database application uses TLS to encrypt data in transit. |
 {: caption="Table 1. Data encryption architecture decisions" caption-side="bottom"}
 
