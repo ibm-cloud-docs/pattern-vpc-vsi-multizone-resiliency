@@ -20,7 +20,7 @@ The web app multi-zone resiliency pattern provides a solution design for a 3-tie
 This pattern is recommended for applications with 99.9% availability requirements.
 - It can support up to 99.99% application availability designs when the application is spread across 3 availability zones.
 - It can be used to support business continuity policies or regulatory requirements with country boundaries or geo-data residence constraints.
-- It does not support out-of-region disaster recovery. To address disaster recovery policies or business continuity policies with geo or distance compliance requirements, see the [web app cross-region resiliency pattern](/docs/pattern-vpc-vsi-cross-region-resiliency).
+- It does not support out-of-region disaster recovery. To address disaster recovery policies or business continuity policies with geo or distance compliance requirements, see the [Web app cross-region resiliency pattern](/docs/pattern-vpc-vsi-cross-region-resiliency).
 
 The web app multi-zone resiliency pattern is intended to:
 
