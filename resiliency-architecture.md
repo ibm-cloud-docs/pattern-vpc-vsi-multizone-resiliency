@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -23,7 +23,7 @@ The following sections summarize the resiliency architecture decisions for workl
 | High Availability Deployment | * Ensure availability of resources if outages occur. \n * Support SLA targets for application availability. | - Single zone, single region \n - Multi zone, single region \n - Multi-zone, multi region | Multi-zone, single region | Recommended approach for core business applications and production level workloads with stringent resiliency requirements \n - Provides protection from zone outage \n - Supports 99.99% availability for active-active application architecture with virtual servers that are deployed across 3 zones \n  - Supports business continuity policies with country boundaries or geo-data residence constraints |
 {: caption="Table 1. High availability architecture decisions" caption-side="bottom"}
 
-## Architecture decisions for backup and restore 
+## Architecture decisions for backup and restore
 {: #backup-and-restore}
 
 | Architecture decision | Requirement | Alternative | Decision | Rationale |

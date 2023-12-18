@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 keywords: # Not typically populated
 
@@ -45,14 +45,14 @@ The web app multi-zone resiliency architecture deploys a 3-tier web application 
 
 ![Web app multi-zone resiliency solution architecture](web-app-multi-zone-architecture.png){: caption="Figure 1. Web app multi-zone resiliency solution architecture" caption-side="bottom"}
 
-The Web, Application, and Database tiers are deployed on Virtual Servers for VPC (VPC VSIs) across two availability zones within the Workload VPC.
+The web, application, and database tiers are deployed on Virtual Servers for VPC (VPC VSIs) across two availability zones within the Workload VPC.
 - The virtual servers in the web and app tiers are placed within [Placement Groups](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui) for host failure protection and are part of [Instance Groups](/docs/vpc?topic=vpc-creating-auto-scale-instance-group&interface=ui) for autoscaling. A [VPC Application Load Balancer](/docs/vpc?topic=vpc-load-balancers) is used to route traffic to healthy application servers.
 - The database servers are deployed in active-standby mode. Data replication across availability zones is handled by the database software based on database specific high availability configuration options.
 - IBM Storage Protect is used to create database backups to enable data recovery.
 
 All data is encrypted by using customer-provided keys that are managed by [Key Protect](/docs/key-protect?topic=key-protect-about).
 - All storage is encrypted at rest with customer-provided keys.
-- Data is encrypted in transit that uses TLS encryption. [Secrets Manager](https://cloud.ibm.com/catalog/services/secrets-manager){: external} is used to store and manage SSL/TLS certificates.
+- Data is encrypted in transit by using TLS encryption. [Secrets Manager](https://cloud.ibm.com/catalog/services/secrets-manager){: external} is used to store and manage SSL/TLS certificates.
 - The [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started) is deployed as a proxy to the public VPC Application Load Balancer that front ends the web tier to provide Distributed Denial of Service (DDoS) protection and Web Application Firewall protection.
 
 ## Design scope
@@ -60,11 +60,11 @@ All data is encrypted by using customer-provided keys that are managed by [Key P
 
 The web app multi-zone resiliency architecture covers [design considerations](/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-compute-design) and [architecture decisions](/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-compute-design) for the following aspects and domains (as defined in the [Architecture Framework](/docs/architecture-framework?topic=architecture-framework-intro)):
 
-- **Compute:** Virtual Servers
-- **Storage:** Primary Storage, Backup Storage
-- **Networking:** Enterprise Connectivity, Segmentation and Isolation, Cloud Native Connectivity, Load Balancing, Domain Name System
-- **Security:** Data Security, Identity and Access Management, Application Security, Infrastructure and Endpoint Security
-- **Resiliency:** High Availability, Backup and Restore,
+- **Compute:** Virtual servers
+- **Storage:** Primary storage, Backup storage
+- **Networking:** Enterprise connectivity, Segmentation and isolation, Cloud native connectivity, Load balancing, Domain name system
+- **Security:** Data security, Identity and access management, Application security, Infrastructure and endpoint security
+- **Resiliency:** High availability, Backup and restore,
 - **Service Management:** Monitoring, Logging, Auditing, Alerting
 
  ![Web app multi-zone resiliency architecture design scope](heat-map-vpc-multi-zone.svg){: caption="Figure 2. Web app multi-zone resiliency architecture design scope" caption-side="bottom"}
@@ -91,22 +91,22 @@ The following represents a typical set of requirements for enterprise-ready web 
 
 | Aspects | Solution components | How the component is used |
 | -------------- | -------------- | -------------- |
-| Compute            | [Virtual Servers for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}                                                                                                                                                                   | Web, App, and database servers                                                                                                        |
+| Compute            | [Virtual Servers for VPC](/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui)  | Web, app, and database servers                                                                                                        |
 | Storage            | [Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block)                                                                                                                                      | Database servers storage                                                                                                              |
 |                    | [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage)                                                                                      | Web app static content, backups, logs (application, operational, and audit)                                                       |
 | Networking         | [VPC Virtual Private Network (VPN) Client](/docs/iaas-vpn?topic=iaas-vpn-getting-started)                                                                                                           | Remote access to manage resources in a private network                                                                                  |
 |                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups (SGs), ACLs](/docs/vpc?topic=vpc-getting-started)                                                                                          | VPCs for workload isolation. \n Subnets, SGs, and ACLs for restricted access to web, app, and database tiers                              |
 |                    | [Local Transit Gateway (TGW)](/docs/transit-gateway?topic=transit-gateway-getting-started)                                                                                                                | Connectivity between workload and management VPCs |
 |                    | [Virtual Private Gateway & Virtual Private Endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe)            | Private network access to Cloud Services, for example Key Protect, Cloud Object Storage, and so on                                                                 |
-|                    | [VPC Application Load Balancer](/docs/vpc?topic=vpc-load-balancers)                                                                                                                                 | Application Load Balancing for web and app tiers                                                                                      |
+|                    | [VPC Application Load Balancer](/docs/vpc?topic=vpc-load-balancers)                                                                                                                                 | Application load balancing for web and app tiers                                                                                      |
 |                    | [Public Gateway](/docs/vpc?topic=vpc-about-networking-for-vpc&interface=cli#public-gateway-for-external-connectivity)                                                                               | Web app access to the internet                                                                                                        |
 |                    | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started)                                                                                                                                | Public DNS resolution                                                                         |
 |                    | [DNS Services](/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                                                                                                                    | Private DNS resolution                                                                                                                |
 | Security           | [IAM](/docs/account?topic=account-cloudaccess)                                                                                                                                                      | IBM Cloud Identity & Access Management                                                                                                |
 |                    | [BYO Bastion Host on VPC VSI with PAM SW](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport)                            | Remote access with Privileged Access Management                                                                                      |
 |                    | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started)                                                                                                                                | DDoS protection and Web App Firewall                                                                                                  |
-|                    | [Key Protect](/docs/key-protect?topic=key-protect-about)                                                                                                                                            | Key Management Service                                                                                                                |
-|                    | [Secrets Manager](https://cloud.ibm.com/catalog/services/secrets-manager){: external}                                              | Certificate and Secrets Management                                                                                                    |
+|                    | [Key Protect](/docs/key-protect?topic=key-protect-about)                                                                                                                                            | Key management service   |
+|                    | [Secrets Manager](https://cloud.ibm.com/catalog/services/secrets-manager){: external}                                              | Certificate and secrets Management                                                                                                    |
 | Resiliency         | [Placement Groups](/docs/vpc?topic=vpc-about-placement-groups-for-vpc&interface=ui) and [Instance Groups](/docs/vpc?topic=vpc-creating-auto-scale-instance-group&interface=ui) | To avoid single points of failure and adjust capacity based on load changes                                                           |
 |                    | VPC VSIs, VPC Block across multiple zones in one region                                                                                                                                                                 | Web, app, database high availability deployment                                                                            |
 |                    | [IBM Storage Protect](https://cloud.ibm.com/catalog/content/SPonIBMCloud-20c54034-d319-48c0-beb6-0b4adc54265c-global){: external}         | Database backups                                                                                                                      |

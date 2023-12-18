@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 subcollection: pattern-vpc-vsi-multi-zone-resiliency
 
@@ -16,7 +16,7 @@ keywords:
 ## High availability design
 {: #high-availability-design}
 
-The web app multi-zone resiliency pattern deploys a 3-tier web architecture in a region following the multi-zone, single-region deployment described in the [Virtual Private Cloud Resiliency white paper](/docs/vpc-resiliency?topic=vpc-resiliency-high-availability-design).
+The web app multi-zone resiliency pattern deploys a 3-tier web architecture in a region following the multi-zone, single-region deployment described in [IBM VPC resiliency](/docs/vpc-resiliency).
 
 The web tier and application tier are deployed in two availability zones. Each tier is deployed across VPC Virtual Server Instances (VSIs) in a VPC Instance Group for Autoscaling. A public VPC Application Load Balancer (ALB) routes web requests to healthy virtual instances in the app tier. A private VPC ALB routes traffic to healthy virtual servers in the app tier.
 

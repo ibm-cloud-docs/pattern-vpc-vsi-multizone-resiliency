@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -15,7 +15,7 @@ keywords:
 
 The web app multi-zone resiliency pattern uses IBM Cloud Data Protection Services to protect all application data, including configuration and metadata, as well as all security data, including logs and credentials to access application or cloud resources, from unauthorized disclosure, as follows:
 
-- Application, Databases, backup, and log data are encrypted at rest that uses storage encryption with customer-managed keys through the integration of VPC Block and Cloud Object Storage services with [IBM Cloud Key Management Services (KMS)](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui#about-encryption).
+- Application, databases, backup, and log data are encrypted at rest by using storage encryption with customer-managed keys through the integration of VPC Block and Cloud Object Storage services with [IBM Cloud Key Management Services (KMS)](/docs/secrets-manager?topic=secrets-manager-mng-data&interface=ui#about-encryption).
 
 - The web app encrypts data in transit by using TLS encryption. The Secrets Manager cloud service is used to store and manage secrets and credentials to access applications and cloud resources, as well as SSL/TLS certificates and private keys.
 

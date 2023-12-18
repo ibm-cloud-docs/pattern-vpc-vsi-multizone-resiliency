@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 subcollection: pattern-vpc-vsi-multizone-resiliency
 
@@ -13,7 +13,7 @@ keywords:
 # Service management design
 {: #service-management-design}
 
-The web app multi-zone resiliency pattern uses IBM Cloud services to monitor the health of all the components of the solution, including infrastructure, cloud services, and application as well as operational logs, to detect and correct issues that might affect the availability of the Web Application.
+The web app multi-zone resiliency pattern uses IBM Cloud services to monitor the health of all the components of the solution, including infrastructure, cloud services, and application as well as operational logs, to detect and correct issues that might affect the availability of the web application.
 
 ## Monitoring design
 {: #smonitoring-design}
@@ -32,7 +32,8 @@ Use IBM Cloud Monitoring to get a comprehensive view of the health of the Web Ap
 
 - Configure notification channels to inform operation and support teams when an alert is triggered to support incident response processes.
 
-    -   Consider configuring streaming to forward selected metrics for further data processing, analysis or to trigger an automated response based on specific values. See [Streaming Data](/docs/monitoring?topic=monitoring-data_streaming#data_streaming_ui) for details.
+    Consider configuring streaming to forward selected metrics for further data processing, analysis or to trigger an automated response based on specific values. See [Streaming Data](/docs/monitoring?topic=monitoring-data_streaming#data_streaming_ui) for details.
+    {: note}
 
 - Backup historical metrics that might be needed for auditing purposes by querying and copying the data to cross-regional Cloud Object Storage buckets that can be accessed from another region if a disaster occurs.
 
@@ -49,7 +50,8 @@ Use IBM Log Analysis to monitor operational logs for applications, platform reso
 
 - Define alerts for the conditions that you need to monitor and integrate with IBM Cloud Monitoring to send notifications and manage log alerts along with metrics alerts. See [Integrating with IBM Cloud Monitoring](/docs/log-analysis?topic=log-analysis-monitoring) for details.
 
-    - Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](/docs/log-analysis?topic=log-analysis-streaming) for details.
+    Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](/docs/log-analysis?topic=log-analysis-streaming) for details.
+    {: note}
 
 - Copy logs to IBM Cloud Object Storage to support \>30 days data search or data retention policy requirements. See [Configuring Archiving Logs to Cloud Object Storage](/docs/log-analysis?topic=log-analysis-archiving-ov) for details.
 
@@ -66,7 +68,8 @@ Use [IBM Cloud Activity Tracker](/docs/activity-tracker?topic=activity-tracker-g
 
 - Create alerts to get notifications when configuration changes are made to the IBM Cloud account and integrate with IBM Cloud Monitoring to send notifications and manage audit log alerts along with metrics alerts. See [Integrating with IBM Cloud Monitoring](/docs/activity-tracker?topic=activity-tracker-monitoring) for details.
 
-    - Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](/docs/activity-tracker?topic=activity-tracker-streaming) for details.
+    Consider configuring streaming to forward logs to other tools such as data lakes or Security Information and Event Management (SIEM) for further analysis or threat detection and investigation. See [Streaming Data](/docs/activity-tracker?topic=activity-tracker-streaming) for details.
+    {: note}
 
 - Copy audit logs to IBM Cloud Object Storage to support \>30 days data search or data retention policy requirements. See [Configuring Archiving Logs to Cloud Object Storage](/docs/activity-tracker?topic=activity-tracker-archiving-ov) for details.
 
@@ -81,4 +84,4 @@ It is important to factor in incident detection, notification, escalation, disco
 
 - Add IBM Cloud Monitoring as an event notification source to route operational monitoring and logging alert notifications as well as audit logging alert notifications for Web Apps. See [Add an Event Notification Source](/docs/event-notifications?topic=event-notifications-en-add-source) for details.
 
-- Set service destinations such as webhook and Code Engine for IBM Cloud Monitoring event sources to automate incident response and minimize downtime for Web Apps.
+- Set service destinations such as webhook and Code Engine for IBM Cloud Monitoring event sources to automate incident response and minimize downtime for web apps.
