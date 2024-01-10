@@ -32,7 +32,7 @@ In the web app multi-zone resiliency pattern, the database tier is deployed on V
 
 This database deployment architecture is subject to the 99.9% IBM Cloud infrastructure [SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external} for a region. For 99.99% infrastructure SLA within the region, the database must be deployed on virtual servers across three availability zones within the region and use clustering and replication configurations that are database-specific and are beyond the scope of this document.
 
-An alternative to deploying the database in VPC Virtual Server Instances is to use [IBM Cloud Databases](/docs/cloud-databases?topic=cloud-databases-about) instances in a multi-zone region (MZR). IBM Cloud Databases provides highly available and scalable managed SQL and no-SQL databases with 99.99% SLA and low operational cost.
+An alternative to deploying the database in VPC Virtual Server Instances is to use [IBM Cloud Databases](/docs/cloud-databases) instances in a multi-zone region (MZR). IBM Cloud Databases provides highly available and scalable managed SQL and no-SQL databases with 99.99% SLA and low operational cost.
 
 ## Backup and restore design
 {: #backup-design}
@@ -50,4 +50,4 @@ Do the following to create transaction-consistent database backups that can be q
 Do the following to enable recovery of the database contents in an alternative site if a regional outage occurs:
 - Create backups of the database servers by using [IBM Storage Protect](https://cloud.ibm.com/catalog/content/SPonIBMCloud-20c54034-d319-48c0-beb6-0b4adc54265c-global){: external} to enable recovery of the database application in an alternative site if a regional outage occurs.
 
-- Store database backups in [cross-region Cloud Object Storage](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-geo).
+- Store database backups in [cross-region Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
