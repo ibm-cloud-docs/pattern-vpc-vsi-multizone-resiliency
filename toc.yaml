@@ -14,18 +14,15 @@ toc:
     path: pattern-vpc-vsi-multizone-resiliency
     description: The web app multi-zone resiliency pattern deploys a 3-tier web application on VPC Virtual Servers by using compute, storage, and network cloud resources as well as other Cloud Services provisioned in multiple availability zones within a single region to meet high availability requirements.
     label: Web app multi-zone resiliency
-
   entries:
   - navgroup:
       id: overview
       topics:
       - overview.md
-
   - navgroup:
       id: architecture
       topics:
       - reference-architecture-web-app-multi-zone.md
-
   - navgroup:
       id: plan
       topics:
@@ -61,18 +58,15 @@ toc:
           - topic: service-management-architecture.md
             navtitle: Service management
           # - other-architecture.md
-
   - navgroup:
       id: deploy
       topics:
       - topic-7.md
       - topic-8.md
-
   - navgroup:
       id: reference
       topics:
       - references.md
-
   - navgroup:
       id: help
       topics:
