@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "title": "Web App Multi-Zone Resiliency",
+  "introduction": "The web app multi-zone resiliency pattern deploys a 3-tier web application on VPC Virtual Servers using compute, storage, and network cloud resources as well as other Cloud Services provisioned in multiple availability zones within a single region to meet high availability requirements.",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Solution overview",
+        "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-overview"
+      },
+      {
+        "title": "Reference Architecture",
+        "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-web-app-multi-zone"
+      },
+      {
+        "title": "Design considerations",
+        "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-compute-design"
+      },
+      {
+        "title": "Architecture decisions",
+        "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-compute-architecture"
+      },
+      {
+        "title": "References",
+        "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-references"
+      }
+    ]
+  },
+  "section_architectures": [
+    {
+      "title": "Web App Multi-Zone Resiliency",
+      "href": "/docs/pattern-vpc-vsi-multizone-resiliency?topic=pattern-vpc-vsi-multizone-resiliency-web-app-multi-zone",
+      "deployable": false
+    }
+  ]
+}
