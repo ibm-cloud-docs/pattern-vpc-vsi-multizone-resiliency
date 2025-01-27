@@ -59,15 +59,6 @@ toc:
             navtitle: Service management
           # - other-architecture.md
   - navgroup:
-      id: deploy
-      topics:
-      - topic-7.md
-      - topic-8.md
-  - navgroup:
       id: reference
       topics:
       - references.md
-  - navgroup:
-      id: help
-      topics:
-      - topic: topic-10.md
